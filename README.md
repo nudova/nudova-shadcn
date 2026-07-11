@@ -39,7 +39,7 @@ Add the namespace to the app's `components.json`:
 "registries": {
   "@nudova": "http://localhost:3333/r/{name}.json"
   // or, once pushed to GitHub (public/r is committed):
-  // "@nudova": "https://raw.githubusercontent.com/devxhub/nudova-shadcn/main/public/r/{name}.json"
+  // "@nudova": "https://raw.githubusercontent.com/nudova/nudova-shadcn/main/public/r/{name}.json"
 }
 ```
 
