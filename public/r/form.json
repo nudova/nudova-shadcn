@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "title": "Form",
+  "description": "Building forms with react-hook-form and zod.",
+  "dependencies": [
+    "react-hook-form"
+  ],
+  "files": [
+    {
+      "path": "components/ui/form.tsx",
+      "content": "\"use client\";\n\nimport {\n  Field,\n  FieldContent,\n  FieldError,\n  FieldLabel,\n} from \"@/components/ui/field\";\nimport * as React from \"react\";\nimport {\n  Controller,\n  type ControllerRenderProps,\n  type FieldPath,\n  type FieldValues,\n  type UseFormReturn,\n} from \"react-hook-form\";\n\nconst FormContext = React.createContext<UseFormReturn<FieldValues> | null>(\n  null\n);\n\nfunction useFormContext<T extends FieldValues>(): UseFormReturn<T> {\n  const context = React.useContext(FormContext);\n  if (!context) {\n    throw new Error(\"FormField must be used within a Form component\");\n  }\n  return context as UseFormReturn<T>;\n}\n\ntype FormProps<T extends FieldValues> = Readonly<{\n  form: UseFormReturn<T>;\n  onSubmit: (data: T) => void | Promise<void>;\n  children: React.ReactNode;\n  className?: string;\n}>;\n\nfunction Form<T extends FieldValues>({\n  form,\n  onSubmit,\n  children,\n  className,\n}: FormProps<T>) {\n  return (\n    <FormContext.Provider value={form as UseFormReturn<FieldValues>}>\n      <form\n        noValidate\n        onSubmit={form.handleSubmit(onSubmit)}\n        className={className}\n      >\n        {children}\n      </form>\n    </FormContext.Provider>\n  );\n}\n\ntype FormFieldProps<T extends FieldValues> = Readonly<{\n  name: FieldPath<T>;\n  label?: string;\n  description?: string;\n  children: (field: ControllerRenderProps<T, FieldPath<T>>) => React.ReactNode;\n  className?: string;\n}>;\n\nfunction FormField<T extends FieldValues>({\n  name,\n  label,\n  description,\n  children,\n  className,\n}: FormFieldProps<T>) {\n  const form = useFormContext<T>();\n  const { control } = form;\n\n  return (\n    <Controller\n      control={control}\n      name={name}\n      render={({ field, fieldState }) => {\n        const fieldError = fieldState.error;\n        return (\n          <Field className={className}>\n            {label && <FieldLabel htmlFor={field.name}>{label}</FieldLabel>}\n            <FieldContent>\n              {children(field)}\n              {description && (\n                <p className=\"text-muted-foreground text-sm\">{description}</p>\n              )}\n              {fieldError && (\n                <FieldError\n                  errors={[\n                    {\n                      message:\n                        typeof fieldError.message === \"string\"\n                          ? fieldError.message\n                          : \"Validation error\",\n                    },\n                  ]}\n                />\n              )}\n            </FieldContent>\n          </Field>\n        );\n      }}\n    />\n  );\n}\n\nexport { useForm } from \"react-hook-form\";\nexport { Form, FormField, useFormContext };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

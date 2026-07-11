@@ -1,0 +1,33 @@
+{
+  "name": "nudova-shadcn",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Nudova shadcn registry — shared UI components for nudova-web and nudova-admin",
+  "scripts": {
+    "build": "shadcn build",
+    "serve": "serve public -p 3333",
+    "type-check": "tsc --noEmit",
+    "validate": "pnpm type-check && pnpm build"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.6.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "lucide-react": "^1.24.0",
+    "next-themes": "^0.4.6",
+    "radix-ui": "^1.6.2",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-hook-form": "^7.81.0",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "serve": "^14.2.4",
+    "shadcn": "^4.13.0",
+    "typescript": "^5"
+  }
+}
