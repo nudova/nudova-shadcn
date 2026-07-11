@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "nudova",
-  "homepage": "https://github.com/devxhub/nudova-shadcn",
+  "homepage": "https://github.com/nudova/nudova-shadcn",
   "items": [
     {
       "name": "alert-dialog",
@@ -14,12 +14,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "radix-ui"
-      ],
-      "registryDependencies": [
-        "@nudova/button"
-      ]
+      "dependencies": ["radix-ui"],
+      "registryDependencies": ["@nudova/button"]
     },
     {
       "name": "badge",
@@ -32,10 +28,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority",
-        "radix-ui"
-      ]
+      "dependencies": ["class-variance-authority", "radix-ui"]
     },
     {
       "name": "button",
@@ -48,10 +41,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority",
-        "radix-ui"
-      ]
+      "dependencies": ["class-variance-authority", "radix-ui"]
     },
     {
       "name": "card",
@@ -76,10 +66,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "lucide-react",
-        "radix-ui"
-      ]
+      "dependencies": ["lucide-react", "radix-ui"]
     },
     {
       "name": "combobox",
@@ -92,14 +79,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@base-ui/react",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@nudova/button",
-        "@nudova/input-group"
-      ]
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["@nudova/button", "@nudova/input-group"]
     },
     {
       "name": "command",
@@ -112,14 +93,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "cmdk",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "@nudova/dialog",
-        "@nudova/input-group"
-      ]
+      "dependencies": ["cmdk", "lucide-react"],
+      "registryDependencies": ["@nudova/dialog", "@nudova/input-group"]
     },
     {
       "name": "dialog",
@@ -132,13 +107,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "lucide-react",
-        "radix-ui"
-      ],
-      "registryDependencies": [
-        "@nudova/button"
-      ]
+      "dependencies": ["lucide-react", "radix-ui"],
+      "registryDependencies": ["@nudova/button"]
     },
     {
       "name": "dropdown-menu",
@@ -151,10 +121,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "lucide-react",
-        "radix-ui"
-      ]
+      "dependencies": ["lucide-react", "radix-ui"]
     },
     {
       "name": "field",
@@ -167,13 +134,8 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "@nudova/label",
-        "@nudova/separator"
-      ]
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["@nudova/label", "@nudova/separator"]
     },
     {
       "name": "form",
@@ -186,9 +148,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "react-hook-form"
-      ]
+      "dependencies": ["react-hook-form"]
     },
     {
       "name": "input-group",
@@ -201,9 +161,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "registryDependencies": [
         "@nudova/button",
         "@nudova/input",
@@ -233,9 +191,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "radix-ui"
-      ]
+      "dependencies": ["radix-ui"]
     },
     {
       "name": "native-select",
@@ -248,9 +204,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "lucide-react"
-      ]
+      "dependencies": ["lucide-react"]
     },
     {
       "name": "popover",
@@ -263,9 +217,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "radix-ui"
-      ]
+      "dependencies": ["radix-ui"]
     },
     {
       "name": "select",
@@ -278,10 +230,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "lucide-react",
-        "radix-ui"
-      ]
+      "dependencies": ["lucide-react", "radix-ui"]
     },
     {
       "name": "separator",
@@ -294,9 +243,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "radix-ui"
-      ]
+      "dependencies": ["radix-ui"]
     },
     {
       "name": "sonner",
@@ -309,11 +256,7 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "lucide-react",
-        "next-themes",
-        "sonner"
-      ]
+      "dependencies": ["lucide-react", "next-themes", "sonner"]
     },
     {
       "name": "table",
@@ -351,11 +294,7 @@
           "target": "components/ui/button.tsx"
         }
       ],
-      "dependencies": [
-        "class-variance-authority",
-        "lucide-react",
-        "radix-ui"
-      ]
+      "dependencies": ["class-variance-authority", "lucide-react", "radix-ui"]
     }
   ]
 }
