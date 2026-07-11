@@ -18,6 +18,20 @@
       "registryDependencies": ["@nudova/button"]
     },
     {
+      "name": "autocomplete",
+      "type": "registry:ui",
+      "title": "Autocomplete",
+      "description": "A select-like trigger that opens a searchable list of options. Built on Base UI Combobox with single/multiple selection, async loading, and form support.",
+      "files": [
+        {
+          "path": "components/ui/autocomplete.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["@nudova/input-group"]
+    },
+    {
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",

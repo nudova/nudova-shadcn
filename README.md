@@ -7,7 +7,7 @@ All components are shadcn v4 **radix-vega** style (Radix base), extracted from t
 ## Layout
 
 ```
-registry.json        # registry manifest (22 items)
+registry.json        # registry manifest (23 items)
 components/ui/       # component sources
 lib/utils.ts         # cn() helper (local type-check only, not a registry item)
 public/r/            # built registry JSON (output of `pnpm build`, committed)
@@ -15,8 +15,8 @@ public/r/            # built registry JSON (output of `pnpm build`, committed)
 
 ## Items
 
-- 21 stock radix-vega components shared byte-identical by both apps:
-  `alert-dialog`, `badge`, `button`, `card`, `checkbox`, `combobox`, `command`, `dialog`, `dropdown-menu`, `field`, `form`, `input-group`, `input`, `label`, `native-select`, `popover`, `select`, `separator`, `sonner`, `table`, `textarea`
+- 22 stock radix-vega components shared byte-identical by both apps:
+  `alert-dialog`, `autocomplete`, `badge`, `button`, `card`, `checkbox`, `combobox`, `command`, `dialog`, `dropdown-menu`, `field`, `form`, `input-group`, `input`, `label`, `native-select`, `popover`, `select`, `separator`, `sonner`, `table`, `textarea`
 - **`button-belltex`** — the BellTex design-system button fork used by the storefront (variants `primary`/`secondary`/`ghost`/`boys`, sizes sm/md/lg = 36/44/52, `loading` prop, back-compat boilerplate variants). It installs **as `components/ui/button.tsx`** via a `target` override.
 
 > **Warning:** `button` (stock) and `button-belltex` write to the same file in a consumer. nudova-web must only ever install `button-belltex`; nudova-admin uses the stock `button`. Never run `add --overwrite` in nudova-web with anything that transitively depends on `@nudova/button` (`alert-dialog`, `combobox`, `dialog`, `input-group`, …) — without `--overwrite` existing files are left untouched, which is the safe default.
