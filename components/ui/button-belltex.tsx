@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
  *   Button/Ghost     → variant="ghost" (transparent, hover divider)
  * Sizes sm/md/lg = 36/44/52; md is the default so tap targets are ≥44px.
  * `default`, `outline`, `destructive`, `link` + legacy sizes are kept for the
- * (set-aside) boilerplate screens. `loading` shows a spinner and disables.
+ * (set-aside) legacy screens. `loading` shows a spinner and disables.
  */
 const buttonVariants = cva(
   "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 aria-invalid:border-destructive rounded-md border border-transparent bg-clip-padding font-semibold focus-visible:ring-[3px] [&_svg:not([class*='size-'])]:size-[18px] inline-flex items-center justify-center whitespace-nowrap transition-colors cursor-pointer disabled:pointer-events-none disabled:cursor-not-allowed [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none select-none",
@@ -27,7 +27,7 @@ const buttonVariants = cva(
           "bg-transparent text-ink hover:bg-divider disabled:text-ink-faint",
         // Boys sub-brand CTA (blue-coded, distinct from the coral accent).
         boys: "bg-boys text-surface transition-[filter] hover:brightness-90 disabled:bg-border disabled:text-ink-faint",
-        // --- back-compat (boilerplate) ---
+        // --- back-compat (legacy) ---
         default: "bg-primary text-primary-foreground hover:bg-brand-shade",
         outline:
           "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted",
