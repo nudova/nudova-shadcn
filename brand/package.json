@@ -1,0 +1,16 @@
+{
+  "name": "@nudova/brand",
+  "version": "1.1.0",
+  "description": "Nudova Brand Guidelines v1.1 — shared design tokens and logo artwork",
+  "license": "UNLICENSED",
+  "private": true,
+  "files": [
+    "tokens.css",
+    "assets"
+  ],
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./logo/*": "./assets/logo/*",
+    "./package.json": "./package.json"
+  }
+}

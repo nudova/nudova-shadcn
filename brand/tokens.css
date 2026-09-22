@@ -1,0 +1,190 @@
+/* Nudova design tokens — v1.1
+   Source of truth for buyer-facing surfaces (marketing, docs, sandbox chrome).
+   Contrast verified against WCAG 2.1, measured against --bg-canvas
+   (never pure white, which is not a background).
+   Name tokens by role, never by colour. */
+
+:root {
+  /* brand ---------------------------------------------------------- */
+  --nudova-blue-50: #efecff;
+  --nudova-blue-100: #c1b6fe;
+  --nudova-blue-200: #9886fc;
+  --nudova-blue-300: #6f56fc;
+  --nudova-blue-400: #5031fb;
+  --nudova-blue-500: #310dfa; /* brand blue */
+  --nudova-blue-600: #290ccc;
+  --nudova-blue-700: #230baa;
+  --nudova-blue-900: #180866; /* no 800 — the gap is deliberate */
+
+  --nudova-pink-50: #ffe6f8;
+  --nudova-pink-100: #ffcdf1;
+  --nudova-pink-300: #ff9be4;
+  --nudova-pink-400: #fe5cd3;
+  --nudova-pink-500: #fe05bb; /* brand magenta */
+  --nudova-pink-600: #db05a1; /* only pink that carries white text: 4.62:1 */
+  --nudova-pink-700: #b80587;
+
+  /* roles: light (default) ------------------------------------------ */
+  --bg-canvas: #fbfaf8;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f4f2ef;
+  --bg-brand-subtle: #efecff;
+
+  --border: #ddd8d1;
+  --border-subtle: #edeae5;
+  --border-focus: #310dfa;
+
+  --text: #211e1b;
+  --text-secondary: #4a453f;
+  --text-muted: #6e6862;
+  --text-brand: #310dfa;
+  --text-on-brand: #ffffff;
+
+  --action-primary: #310dfa;
+  --action-primary-hover: #290ccc;
+  --action-accent: #db05a1;
+  --action-secondary: #ffffff;
+
+  --color-success: #0f8a4f;
+  --color-warning: #b45309;
+  --color-danger: #d2360f;
+  --color-info-fill: #310dfa;
+  --color-info-text: #310dfa;
+
+  /* type ------------------------------------------------------------ */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-bn: "Anek Bangla", "Plus Jakarta Sans", sans-serif;
+
+  --text-display: 4rem;
+  --leading-display: 4.5rem; /* 64 / 72  w800 */
+  --text-h1: 2.75rem;
+  --leading-h1: 3.375rem; /* 44 / 54  w800 */
+  --text-h2: 2rem;
+  --leading-h2: 2.625rem; /* 32 / 42  w700 */
+  --text-h3: 1.5rem;
+  --leading-h3: 2.125rem; /* 24 / 34  w700 */
+  --text-h4: 1.1875rem;
+  --leading-h4: 1.75rem; /* 19 / 28  w700 */
+  --text-lg: 1.125rem;
+  --leading-lg: 1.875rem; /* 18 / 30  w400 */
+  --text-base: 1rem;
+  --leading-base: 1.625rem; /* 16 / 26  w400 */
+  --text-sm: 0.875rem;
+  --leading-sm: 1.375rem; /* 14 / 22  w400 */
+  --text-xs: 0.75rem;
+  --leading-xs: 1.125rem; /* 12 / 18  w600 */
+
+  --leading-base-bn: 1.875rem; /* 16 / 30 — Bangla sets one step looser */
+  --text-code: 0.875rem;
+  --leading-code: 1.375rem; /* 14 / 22 */
+
+  /* space & shape ---------------------------------------------------- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+  --space-5xl: 96px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  --container-max: 1280px;
+
+  /* motion ----------------------------------------------------------- */
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 320ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.64, 0, 0.78, 0);
+}
+
+/* Dark mode ships on day one: the app follows the system setting. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-canvas: #121110;
+    --bg-surface: #1a1917;
+    --bg-subtle: #232120;
+    --bg-brand-subtle: #1b1638;
+
+    --border: #33302c;
+    --border-subtle: #292623;
+    --border-focus: #6f56fc;
+
+    --text: #f2efeb;
+    --text-secondary: #c8c2ba;
+    --text-muted: #a29b93;
+    --text-brand: #9886fc; /* blue-500 is 2.31:1 here — unusable */
+    --text-on-brand: #ffffff;
+
+    --action-primary: #6f56fc; /* white label = 4.76:1 */
+    --action-primary-hover: #9886fc;
+    --action-accent: #fe05bb; /* 5.35:1 on dark — safe here */
+    --action-secondary: #232120;
+
+    --color-success: #3dd68c;
+    --color-warning: #ffb84d;
+    --color-danger: #ff7a57;
+    --color-info-fill: #6f56fc; /* fills and icons only — 3.96:1 */
+    --color-info-text: #9886fc; /* text must use the lighter step */
+  }
+}
+
+[data-theme="dark"] {
+  --bg-canvas: #121110;
+  --bg-surface: #1a1917;
+  --bg-subtle: #232120;
+  --bg-brand-subtle: #1b1638;
+
+  --border: #33302c;
+  --border-subtle: #292623;
+  --border-focus: #6f56fc;
+
+  --text: #f2efeb;
+  --text-secondary: #c8c2ba;
+  --text-muted: #a29b93;
+  --text-brand: #9886fc;
+  --text-on-brand: #ffffff;
+
+  --action-primary: #6f56fc;
+  --action-primary-hover: #9886fc;
+  --action-accent: #fe05bb;
+  --action-secondary: #232120;
+
+  --color-success: #3dd68c;
+  --color-warning: #ffb84d;
+  --color-danger: #ff7a57;
+  --color-info-fill: #6f56fc;
+  --color-info-text: #9886fc;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:lang(bn) {
+  font-family: var(--font-bn);
+  line-height: var(--leading-base-bn);
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

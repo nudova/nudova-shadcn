@@ -11,7 +11,12 @@ registry.json        # registry manifest (23 items)
 components/ui/       # component sources
 lib/utils.ts         # cn() helper (local type-check only, not a registry item)
 public/r/            # built registry JSON (output of `pnpm build`, committed)
+brand/               # @nudova/brand — design tokens + logo artwork (OP#13028)
 ```
+
+## Brand tokens
+
+[`brand/`](./brand/) is `@nudova/brand`: Brand Guidelines v1.1 CSS tokens and lockup SVGs. Marketing, docs, and sandbox chrome import it — do not copy `tokens.css` into consumer repos.
 
 ## Items
 
