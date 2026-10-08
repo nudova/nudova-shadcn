@@ -1,0 +1,35 @@
+---
+description: Require test-first changes, a pull request for code, and OpenProject ticket updates
+alwaysApply: true
+---
+
+# Delivery workflow
+
+## Test-driven development
+
+No production code without a failing test first.
+
+1. **Red.** Write one test for one behavior. Run it and confirm it fails because the behavior is missing.
+2. **Green.** Write only enough code to pass. Re-run that test, then the repository suite.
+3. **Refactor.** Clean names and duplication only while tests stay green.
+
+Bug fixes start from a failing test that reproduces the bug. If production code landed first, delete it and start from the test.
+
+This repository has no test runner. Do not add one without approval. Registry content with no executable behavior is exempt. Run `pnpm validate` before calling the change done.
+
+Ask before skipping TDD on executable code.
+
+## Pull requests
+
+A code change is unfinished until a pull request is open.
+
+- Branch as `agent/feature-name` or `agent/bugfix-name`. Never commit to `main` or `master`.
+- Push the branch and open the pull request after `pnpm validate` succeeds.
+
+## OpenProject
+
+When a work package is in scope (id, URL, or `OP#<id>`):
+
+- Put `OP#<id>` in the pull request Summary. Never use a bare `#<id>`.
+- Update every in-scope ticket before finishing: comment with what changed, how it was verified, and the pull request URL.
+- Resolve status names from the project. Do not guess them.
