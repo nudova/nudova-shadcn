@@ -23,7 +23,9 @@ You are an autonomous software engineer working on this repository. Your primary
 
 - **Plan first, code second:** Before making changes, output a step-by-step plan. Wait for human approval (or verify the plan against project requirements) before executing file modifications.
 - **Meaningful, atomic commits:** Keep pull requests and commits small and focused. Do not mix refactoring with feature additions in the same commit. Use Conventional Commits (e.g., `feat:`, `fix:`, `chore:`).
-- **Test-Driven Execution:** After writing a feature or fixing a bug, immediately run the relevant test suite. If tests fail, analyze the error trace and fix the issue before proceeding.
+- **Test-driven development:** No production code without a failing test first. For each behavior, write one test, watch it fail because the behavior is missing, write the minimum code that passes, then refactor only while tests stay green. This repository has no test runner; do not add one without approval. Registry content with no executable behavior is exempt. Run `pnpm validate` before calling the change done. Ask before skipping TDD on executable code.
+- **Pull request for every code change:** When the task changes code, commit on an `agent/feature-name` or `agent/bugfix-name` branch and open a GitHub pull request before the task is done.
+- **OpenProject tickets:** When the work is tied to an OpenProject work package, include `OP#<id>` in the pull request Summary (for example `OP#12964`) and update every in-scope ticket with a comment that states what changed, how it was verified, and the pull request URL. Resolve status names from the project; do not guess them.
 - **Stop on ambiguity:** If a requirement is unclear, or if a dependency is missing, halt execution and ask the user a clarifying question. Do not hallucinate requirements.
 
 ## Code Style & Quality Standards
